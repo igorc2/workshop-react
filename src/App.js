@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Welcome from './welcome';
 const arrayTest = [1, 2, 3, 4, 5];
 
 class App extends Component {
@@ -23,6 +24,10 @@ class App extends Component {
     // this.srpeadOperatorArray();
     // this.promise();
     // this.promiseAsynAwait();
+  }
+
+  mostraTexto(){
+    console.log('Meu texto');
   }
 
   defaultParams = (x = 2, y = 2) => {
@@ -183,6 +188,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
+            teste
             Edit <code>src/App.js</code> and save to reload.
           </p>
           <a
@@ -193,6 +199,10 @@ class App extends Component {
           >
             Learn React
           </a>
+          <Welcome
+            mostraTexto={this.mostraTexto}
+            person={{ name: "Igor", age: 25}}
+          />
         </header>
       </div>
     );
@@ -200,5 +210,11 @@ class App extends Component {
 }
 
 var anotherOne = `I have global scope`;
+
+var styles = {
+  height: 40,
+  width: 40,
+  backgroundColor: "red"
+};
 
 export default App;
